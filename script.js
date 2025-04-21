@@ -3,16 +3,16 @@ const riquadro = document.getElementById("riquadro-anteprima")
 const bottoneRipristina = document.getElementById("ripristina-css")
 const bottoneTema = document.getElementById("tema-toggle")
 
-const cssSalvato = localStorage.getItem("cssUtente")
-if (cssSalvato) {
-    inputCSS.value = cssSalvato
-    riquadro.setAttribute("style", cssSalvato)
+const stileSalvato = localStorage.getItem("cssUtente")
+if (stileSalvato) {
+    inputCSS.value = stileSalvato
+    riquadro.setAttribute("style", stileSalvato)
 }
 
 inputCSS.addEventListener("input", () => {
-    const css = inputCSS.value
-    riquadro.setAttribute("style", css)
-    localStorage.setItem("cssUtente", css)
+    const stile = inputCSS.value
+    riquadro.setAttribute("style", stile)
+    localStorage.setItem("cssUtente", stile)
 })
 
 bottoneRipristina.addEventListener("click", () => {
@@ -24,4 +24,5 @@ bottoneRipristina.addEventListener("click", () => {
 bottoneTema.addEventListener("click", () => {
     document.body.classList.toggle("dark")
 })
+
 
