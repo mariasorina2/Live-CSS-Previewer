@@ -6,12 +6,12 @@ const bottoneTema = document.getElementById("tema-toggle")
 const cssSalvato = localStorage.getItem("cssUtente")
 if (cssSalvato) {
     inputCSS.value = cssSalvato
-    riquadro.style = cssSalvato
+    riquadro.setAttribute("style", cssSalvato)
 }
 
 inputCSS.addEventListener("input", () => {
     const css = inputCSS.value
-    riquadro.style = css
+    riquadro.setAttribute("style", css)
     localStorage.setItem("cssUtente", css)
 })
 
@@ -24,3 +24,4 @@ bottoneRipristina.addEventListener("click", () => {
 bottoneTema.addEventListener("click", () => {
     document.body.classList.toggle("dark")
 })
+
